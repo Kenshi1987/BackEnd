@@ -4,7 +4,7 @@ const manager = new ProductManager ('products.json');
 
 (async()=>{
     await manager.addProduct ({
-        name: 'Producto1',
+        name: 'Producto14',
         price: 150
 })
 
@@ -16,6 +16,10 @@ await manager.updateProduct (2, {
 })
 
 console.log(await manager.getProducts());
+
+await manager.deleteProduct (1, {
+    
+})
 
 
 })()
