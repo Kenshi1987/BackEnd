@@ -58,6 +58,15 @@ class ProductManager {
     }
 
     //Eliminar Producto
-}
+    deleteProduct = async (id) => {
+        const list = await this.read ()
+        const idDeleted = list.find(product => product.id === id)
 
+    if (idDeleted) {
+        const index = list.indexOf(idDeleted)
+        list.splice(index,1);
+        await this.write(list)
+    }
+}
+}
 module.exports = ProductManager
